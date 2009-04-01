@@ -53,9 +53,9 @@ static inline void Vector3DNormalize(Vector3D *vector)
 	GLfloat vecMag = Vector3DMagnitude(*vector);
 	if ( vecMag == 0.0 )
 	{
-		vector->x /= 1.0;
-		vector->y /= 0.0;
-		vector->z /= 0.0;
+		vector->x = 1.0;
+		vector->y = 0.0;
+		vector->z = 0.0;
 	}
 	vector->x /= vecMag;
 	vector->y /= vecMag;
@@ -87,9 +87,9 @@ static inline void Vector3DFastNormalize(Vector3D *vector)
 	GLfloat vecInverseMag = Vector3DFastInverseMagnitude(*vector);
 	if (vecInverseMag == 0.0)
 	{
-		vector->x /= 1.0;
-		vector->y /= 0.0;
-		vector->z /= 0.0;
+		vector->x = 1.0;
+		vector->y = 0.0;
+		vector->z = 0.0;
 	}
 	vector->x *= vecInverseMag;
 	vector->y *= vecInverseMag;
