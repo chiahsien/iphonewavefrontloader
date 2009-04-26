@@ -304,8 +304,7 @@ static inline void	processOneVertex(VertexTextureIndex *rootNode, GLuint vertexI
 		
 		glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, group.material.shininess);
 		
-		for (int i=0; i < group.numberOfFaces; i++)
-			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, &(group.faces[i]));
+		glDrawElements(GL_TRIANGLES, 3*group.numberOfFaces, GL_UNSIGNED_SHORT, &(group.faces[0]));
 	}
 	if (textureCoords != NULL)
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
